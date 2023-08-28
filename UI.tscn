@@ -1,0 +1,182 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://UI/Meters/blue/meter_bar_holder_left_edge_blue.png" type="Texture" id=5]
+[ext_resource path="res://UI/Meters/purple/meter_bar_holder_left_edge_purple.png" type="Texture" id=6]
+[ext_resource path="res://UI/Meters/blue/meter_text_background_left_edge_blue.png" type="Texture" id=7]
+[ext_resource path="res://UI/Meters/icons/sheild.png" type="Texture" id=8]
+[ext_resource path="res://UI/Meters/purple/meter_bar_right_edge_purple.png" type="Texture" id=9]
+[ext_resource path="res://UI/Meters/blue/meter_bar_holder_right_edge_blue.png" type="Texture" id=10]
+[ext_resource path="res://UI/Meters/blue/meter_bar_center-repeating_blue.png" type="Texture" id=11]
+[ext_resource path="res://UI/Meters/purple/meter_bar_center-repeating_purple.png" type="Texture" id=12]
+[ext_resource path="res://UI/Meters/blue/meter_text_background_right_edge_blue.png" type="Texture" id=13]
+[ext_resource path="res://UI/Meters/purple/meter_bar_holder_right_edge_purple.png" type="Texture" id=14]
+[ext_resource path="res://UI/Meters/purple/meter_icon_holder_purple.png" type="Texture" id=15]
+[ext_resource path="res://UI/Meters/blue/meter_text_background_center_repeating_blue.png" type="Texture" id=16]
+[ext_resource path="res://UI/Meters/blue/meter_icon_holder_blue.png" type="Texture" id=17]
+[ext_resource path="res://UI/Meters/purple/meter_text_background_left_edge_purple.png" type="Texture" id=18]
+[ext_resource path="res://UI/Meters/blue/meter_bar_right_edge_blue.png" type="Texture" id=19]
+[ext_resource path="res://UI/Meters/icons/magic.png" type="Texture" id=20]
+[ext_resource path="res://UI/Meters/purple/meter_text_background_right_edge_purple.png" type="Texture" id=21]
+[ext_resource path="res://UI/Meters/blue/meter_bar_holder_center-repeating_blue.png" type="Texture" id=22]
+[ext_resource path="res://UI/Meters/purple/meter_text_background_center_repeating_purple.png" type="Texture" id=23]
+[ext_resource path="res://UI/Meters/purple/meter_bar_holder_center-repeating_purple.png" type="Texture" id=24]
+[ext_resource path="res://NPC/Textbox.tscn" type="PackedScene" id=25]
+[ext_resource path="res://UI/Inventory.tscn" type="PackedScene" id=26]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=27]
+[ext_resource path="res://UI/ProductSans-Medium.ttf" type="DynamicFontData" id=28]
+
+[sub_resource type="DynamicFont" id=102]
+size = 5
+font_data = ExtResource( 28 )
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="HealthUI" parent="." instance=ExtResource( 27 )]
+margin_left = 130.0
+margin_top = 10.0
+margin_right = 190.0
+margin_bottom = 21.0
+
+[node name="EXP" type="Node2D" parent="."]
+
+[node name="Research" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="MeterBarHolderLeftEdgePurple" type="Sprite" parent="Research"]
+position = Vector2( 32, 16 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 6 )
+
+[node name="MeterBarHolderCenter-repeatingPurple" type="Sprite" parent="Research"]
+position = Vector2( 57, 16 )
+scale = Vector2( 0.2, 0.03 )
+texture = ExtResource( 24 )
+
+[node name="MeterBarHolderRightEdgePurple" type="Sprite" parent="Research"]
+position = Vector2( 82, 16 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 14 )
+
+[node name="MeterTextBackgroundLeftEdgePurple" type="Sprite" parent="Research"]
+position = Vector2( 43, 26 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 18 )
+
+[node name="MeterTextBackgroundRightEdgePurple" type="Sprite" parent="Research"]
+position = Vector2( 81, 26 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 21 )
+
+[node name="MeterTextBackgroundCenterRepeatingPurple" type="Sprite" parent="Research"]
+position = Vector2( 62, 26 )
+scale = Vector2( 0.33, 0.03 )
+texture = ExtResource( 23 )
+
+[node name="ResearchMeter" type="Sprite" parent="Research"]
+position = Vector2( 36, 16 )
+scale = Vector2( 1e-05, 0.03 )
+texture = ExtResource( 12 )
+centered = false
+offset = Vector2( 0, -175.5 )
+
+[node name="ResearchMeterEnd" type="Sprite" parent="Research"]
+visible = false
+position = Vector2( 82, 16 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 9 )
+
+[node name="MeterIconHolderPurple" type="Sprite" parent="Research"]
+position = Vector2( 28, 17 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 15 )
+
+[node name="Icon" type="Sprite" parent="Research"]
+position = Vector2( 28, 17 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Research"]
+anchor_right = 1.0
+margin_left = 41.5
+margin_top = 21.0
+margin_right = 42.5
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 102 )
+text = "Research: 0/25"
+align = 1
+valign = 1
+
+[node name="Mana" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="MeterBarHolderLeftEdgePurple" type="Sprite" parent="Mana"]
+position = Vector2( 252.655, 16 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 5 )
+
+[node name="MeterBarHolderCenter-repeatingPurple" type="Sprite" parent="Mana"]
+position = Vector2( 277.655, 16 )
+scale = Vector2( 0.2, 0.03 )
+texture = ExtResource( 22 )
+
+[node name="MeterBarHolderRightEdgePurple" type="Sprite" parent="Mana"]
+position = Vector2( 302.655, 16 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 10 )
+
+[node name="MeterTextBackgroundRightEdgePurple" type="Sprite" parent="Mana"]
+position = Vector2( 301.5, 26 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 13 )
+
+[node name="MeterTextBackgroundLeftEdgePurple" type="Sprite" parent="Mana"]
+position = Vector2( 263.5, 26 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 7 )
+
+[node name="MeterTextBackgroundCenterRepeatingPurple" type="Sprite" parent="Mana"]
+position = Vector2( 282.5, 26 )
+scale = Vector2( 0.116667, 0.03 )
+texture = ExtResource( 16 )
+
+[node name="ManaMeter" type="Sprite" parent="Mana"]
+position = Vector2( 256.655, 16 )
+scale = Vector2( 1e-05, 0.03 )
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( 0, -175.5 )
+
+[node name="ManaMeterEnd" type="Sprite" parent="Mana"]
+visible = false
+position = Vector2( 302.655, 16 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 19 )
+
+[node name="MeterIconHolderPurple" type="Sprite" parent="Mana"]
+position = Vector2( 248.655, 16 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 17 )
+
+[node name="Icon" type="Sprite" parent="Mana"]
+position = Vector2( 248.655, 16 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 20 )
+
+[node name="Label" type="Label" parent="Mana"]
+anchor_right = 1.0
+margin_left = 262.155
+margin_top = 21.0
+margin_right = 263.155
+margin_bottom = 31.005
+custom_fonts/font = SubResource( 102 )
+text = "Mana: 0/100"
+align = 1
+valign = 1
+
+[node name="Textbox" parent="." instance=ExtResource( 25 )]
+position = Vector2( 160, 144 )
+
+[node name="Inventory" parent="." instance=ExtResource( 26 )]
